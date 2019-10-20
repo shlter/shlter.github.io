@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="测试#一个神奇的博客">
+<meta name="description" content="#java自学第一天 ##1.集合 ###集合概述：1.Collection:单列集合根接口，用于存储一系列符合某种规则的元素。  1.子接口  List:  该集合的特点是有序的、可重复。       List主要的接口实现类为:ArrayList和LinkedList。      Set:  该集合特点是无序并且无法重复。       Set主要的接口实现类为:HashSet和TreeSet。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shlter">
-<meta property="og:url" content="http://yoursite.com/2019/03/24/shlter/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/10/20/java自学第一天/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="测试#一个神奇的博客">
+<meta property="og:description" content="#java自学第一天 ##1.集合 ###集合概述：1.Collection:单列集合根接口，用于存储一系列符合某种规则的元素。  1.子接口  List:  该集合的特点是有序的、可重复。       List主要的接口实现类为:ArrayList和LinkedList。      Set:  该集合特点是无序并且无法重复。       Set主要的接口实现类为:HashSet和TreeSet。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-24T05:37:29.927Z">
+<meta property="og:updated_time" content="2019-10-20T14:18:05.499Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="shlter">
-<meta name="twitter:description" content="测试#一个神奇的博客">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="#java自学第一天 ##1.集合 ###集合概述：1.Collection:单列集合根接口，用于存储一系列符合某种规则的元素。  1.子接口  List:  该集合的特点是有序的、可重复。       List主要的接口实现类为:ArrayList和LinkedList。      Set:  该集合特点是无序并且无法重复。       Set主要的接口实现类为:HashSet和TreeSet。">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/24/shlter/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/20/java自学第一天/">
 
 
 
 
 
-  <title>shlter | Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/shlter/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/20/java自学第一天/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">shlter</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T10:55:11+08:00">
-                2019-03-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-20T22:22:47+08:00">
+                2019-10-20
               </time>
             
 
@@ -299,8 +299,79 @@
       
 
       
-        <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>#一个神奇的博客</p>
+        <p>#java自学第一天</p>
+<p>##1.集合</p>
+<p>###集合概述：<br>1.Collection:单列集合根接口，用于存储一系列符合某种规则的元素。</p>
+<blockquote>
+<p>1.子接口</p>
+<blockquote>
+<p>List:</p>
+<blockquote>
+<p>该集合的特点是有序的、可重复。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>List主要的接口实现类为:ArrayList和LinkedList。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Set:</p>
+<blockquote>
+<p>该集合特点是无序并且无法重复。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Set主要的接口实现类为:HashSet和TreeSet。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>import java.util.HashSet;
 
+class test{  
+private String id;
+private String name;
+public test(String id,String name) {
+    this.id=id;
+    this.name=name;
+}
+@Override
+public String toString() {
+    return &quot;id=&quot; + id + &quot;: name=&quot;+name;
+}
+public int hashCode() { //重写hashCode()方法
+    return id.hashCode(); //返回id属性的哈希值
+}
+public boolean equals(Object obj) { //重写equals方法
+    if(this==obj) {        //判断是否是同一个对象
+        return true;        //如果是返回，true
+    }
+    if(!(obj instanceof test)) {    //判断对象是为test类型
+        return false;                //如果不是test类型，返回false
+    }
+    test te=(test) obj;            //将对象强转为test类型
+    boolean b=this.id.equals(te.id); //判断id值是否相同
+    return b;        
+}
+public static void main(String[] args) {
+    HashSet hashset=new HashSet();
+    test test1=new test(&quot;1&quot;,&quot;abc&quot;);
+    test test2=new test(&quot;2&quot;,&quot;dfg&quot;);
+    test test3=new test(&quot;2&quot;,&quot;dfg&quot;);
+    hashset.add(test1);
+    hashset.add(test2);
+    hashset.add(test3);
+    System.out.println(hashset);
+}
+}
+</code></pre>
       
     </div>
     
@@ -324,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/03/24/shlter/" rel="next" title="shlter">
+                <i class="fa fa-chevron-left"></i> shlter
               </a>
             
           </div>
@@ -333,10 +404,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/20/java自学第一天/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -388,17 +455,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -440,22 +498,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">1.</span> <span class="nav-text">测试</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
