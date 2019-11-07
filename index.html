@@ -451,7 +451,7 @@
       
         
           
-            <h1 id="java自学第一天"><a href="#java自学第一天" class="headerlink" title="java自学第一天"></a>java自学第一天</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="Collection-集合概述："><a href="#Collection-集合概述：" class="headerlink" title="Collection 集合概述："></a>Collection 集合概述：</h3><p>Collection:单列集合根接口，用于存储一系列符合某种规则的元素。</p>
+            <h2 id="集合-first"><a href="#集合-first" class="headerlink" title="集合-first"></a>集合-first</h2><h3 id="Collection-集合概述："><a href="#Collection-集合概述：" class="headerlink" title="Collection 集合概述："></a>Collection 集合概述：</h3><p>Collection:单列集合根接口，用于存储一系列符合某种规则的元素。</p>
 <p>1.添加</p>
 <ul>
 <li>boolean add(Object obj); –添加</li>
@@ -480,23 +480,15 @@
 <li>Object[] toArray(): –将集合转成数组。</li>
 </ul>
 <p>泛型：指的是集合中存储元素的数据类型</p>
-<blockquote>
-<p>1.子接口</p>
-<blockquote>
-<p>List:</p>
-<blockquote>
+<h4 id="1-子接口"><a href="#1-子接口" class="headerlink" title="1.子接口"></a>1.子接口</h4><h5 id="List"><a href="#List" class="headerlink" title="List:"></a>List:</h5><pre><code>List&lt;String&gt; list=new ArrayList&lt;String&gt;();
+</code></pre><blockquote>
 <p>该集合的特点是有序的、可重复。List主要的接口实现类为:ArrayList和LinkedList。</p>
 </blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <p>A:添加功能</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <ul>
@@ -506,15 +498,11 @@
 </ul>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <p>B:删除功能</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <ul>
@@ -525,15 +513,11 @@
 </ul>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <p>C:修改功能</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <ul>
@@ -541,22 +525,17 @@
 </ul>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <p>D:获取功能</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <ul>
 <li>E get(int index)：获取指定位置的元素</li>
 <li>Iterator iterator():就是用来获取集合中每一个元素。</li>
 </ul>
-</blockquote>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -568,7 +547,6 @@
 </blockquote>
 <blockquote>
 <blockquote>
-<blockquote>
 <ul>
 <li>boolean isEmpty()：判断集合是否为空。</li>
 <li>boolean contains(Object o)：判断集合中是否存在指定的元素。</li>
@@ -576,15 +554,11 @@
 </ul>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <p>F:长度功能</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <ul>
@@ -592,15 +566,11 @@
 </ul>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <p>G:把集合转换成数组</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <blockquote>
 <ul>
@@ -608,56 +578,155 @@
 </ul>
 </blockquote>
 </blockquote>
+<h6 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h6><pre><code>ArrayList&lt;String&gt; list=new ArrayList&lt;String&gt;();
+</code></pre><blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>数据存储结构：数组形式</li>
+<li>索引</li>
+<li>查询速度快</li>
+<li>不适应做大量的增删操作</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<h6 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h6><pre><code>LinkedList&lt;String&gt; list=new LinkedList&lt;String&gt;();
+</code></pre><blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>数据存储结构：使用first和list双向循环链表结构</li>
+<li>遍历和查询效率低</li>
+<li>增删操作快</li>
+</ul>
+</blockquote>
+</blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
-<blockquote>
-<p>ArrayList</p>
-</blockquote>
+<p>特有方法 </p>
 </blockquote>
 </blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
-<blockquote>
-<p>LinkedList</p>
+<ul>
+<li>addfirst()、addlist()、removeFirst()、removeList()</li>
+<li>getFirst()、getList()</li>
+<li>pop()方法继承于List接口</li>
+</ul>
 </blockquote>
 </blockquote>
 </blockquote>
+<h6 id="Iterator遍历集合"><a href="#Iterator遍历集合" class="headerlink" title="Iterator遍历集合:"></a>Iterator遍历集合:</h6><pre><code>Collection&lt;String&gt; coll=new ArrayList&lt;String&gt;();
+coll.add(&quot;aaa&quot;);
+coll.add(&quot;bbb&quot;);
+coll.add(&quot;ccc&quot;);
+coll.add(&quot;eee&quot;);
+Iterator&lt;String&gt; it=coll.iterator(); //获取迭代器对象
+while(it.hasNext()) { //返回false停止运行
+    String e=it.next();
+    System.out.println(e);
+//删除时
+//String e=it.next();
+//if(e.equals(&quot;bbb&quot;)) {
+//        coll.remove(e); ConcurrentModificationException 并发修改异常
+//原因：因为 it获取了迭代器对象，如果使用coll.remove()删除会造成coll与it熟练不匹配。
+        it.remove();
+    }
+}
+</code></pre><blockquote>
+<blockquote>
+<blockquote>
+<p>Iterator对collection进行迭代的迭代器。</p>
+</blockquote>
+</blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>Set:</p>
 <blockquote>
+<p>java.util.HashTable不能直接获取java.util.Iterator迭代器进行迭代. </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>迭代与枚举有两点不同。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>迭代器允许调用者利用定义好良好的语言在迭代期间从迭代器所指向的collection移除元素。</li>
+<li>方法名称得到了改进。</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>方法介绍：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>Boolean hasNext():如果仍有元素可以迭代，返回true。</li>
+<li>E next():返回迭代的下一个元素。</li>
+<li>void remove() 从迭代器所指向的collection中移除迭代器返回的最后一个元素。</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<h6 id="Iterator遍历结合（JDK8利用lambda表达式）"><a href="#Iterator遍历结合（JDK8利用lambda表达式）" class="headerlink" title="Iterator遍历结合（JDK8利用lambda表达式）"></a>Iterator遍历结合（JDK8利用lambda表达式）</h6><pre><code>Collection&lt;String&gt; coll=new ArrayList&lt;String&gt;();
+coll.add(&quot;aaa&quot;);
+coll.add(&quot;bbb&quot;);
+coll.add(&quot;ccc&quot;);
+Iterator&lt;String&gt; it=coll.iterator();
+it.forEachRemaining((String e)-&gt;{System.out.println(e);});
+</code></pre><h6 id="增强for循环遍历数组"><a href="#增强for循环遍历数组" class="headerlink" title="增强for循环遍历数组:"></a>增强for循环遍历数组:</h6><pre><code>String[] arr = {&quot;qwe&quot;,&quot;asd&quot;};
+for(String s :arr) {
+    System.out.println(s);
+}
+</code></pre><h6 id="增强for循环遍历集合"><a href="#增强for循环遍历集合" class="headerlink" title="增强for循环遍历集合:"></a>增强for循环遍历集合:</h6><pre><code>Collection&lt;Integer&gt; coll=new ArrayList&lt;Integer&gt;();
+coll.add(123);
+coll.add(456);
+coll.add(789);
+for(Integer i:coll) {
+    System.out.println(i);
+}
+    //遍历集合无法对集合进行修改
+</code></pre><h6 id="foreach遍历结合（JDK8利用lambda表达式）"><a href="#foreach遍历结合（JDK8利用lambda表达式）" class="headerlink" title="foreach遍历结合（JDK8利用lambda表达式）"></a>foreach遍历结合（JDK8利用lambda表达式）</h6><pre><code>Collection&lt;String&gt; coll=new ArrayList&lt;String&gt;();
+coll.add(&quot;aaa&quot;);
+coll.add(&quot;bbb&quot;);
+coll.add(&quot;ccc&quot;);
+coll.forEach((String e)-&gt;{System.out.println(e);});
+</code></pre><p>}</p>
+<h5 id="Set"><a href="#Set" class="headerlink" title="Set:"></a>Set:</h5><blockquote>
 <p>该集合特点是无序并且无法重复。Set主要的接口实现类为:HashSet和TreeSet。</p>
-<blockquote>
-<p>ArrayList</p>
 </blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<h6 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h6><blockquote>
 <blockquote>
 <blockquote>
-<blockquote>
-<blockquote>
-<p>LinkedList</p>
+<ul>
+<li>数据存储结构：数组形式</li>
+<li>存储的元素不可重复</li>
+<li>无序</li>
+</ul>
 </blockquote>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>HastSet子接口</p>
-<blockquote>
-<p>LinkedHastset</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>import java.util.HashSet;
+<p>####### LinkedHastset</p>
+<h6 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h6><pre><code>import java.util.HashSet;
 class test{  
 private String id;
 private String name;
