@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="shlter">
 <meta property="og:description" content="集合-firstCollection 集合概述：Collection:单列集合根接口，用于存储一系列符合某种规则的元素。 1.添加  boolean add(Object obj); –添加 boolean addAll(Collection coll) –添加集合  2.删除  boolean remove(Ooject obj); –删除 boolean removeALL(Collectio">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-07T13:15:39.730Z">
+<meta property="og:updated_time" content="2019-11-12T09:08:49.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java自学第一天">
 <meta name="twitter:description" content="集合-firstCollection 集合概述：Collection:单列集合根接口，用于存储一系列符合某种规则的元素。 1.添加  boolean add(Object obj); –添加 boolean addAll(Collection coll) –添加集合  2.删除  boolean remove(Ooject obj); –删除 boolean removeALL(Collectio">
@@ -566,15 +566,27 @@ coll.forEach((String e)-&gt;{System.out.println(e);});
 <blockquote>
 <blockquote>
 <ul>
-<li>数据存储结构：数组形式</li>
+<li>数据存储结构：哈希表</li>
 <li>存储的元素不可重复</li>
-<li>无序</li>
+<li>无序：底层要使用当前元素的hashCode和数组的长度-1做&amp;运算，结果就是存放的数组的下表位置。</li>
+<li>唯一：首先判断对象是否相等，首先判断2个对象的hashCode以及equals是否相等，如果相等，最后胡返回一个有值的对象，通过这个对象和null做==比较，结果为false，所以重复的元素添加不进去。</li>
+<li>hashcode()</li>
+<li>无索引：</li>
 </ul>
 </blockquote>
 </blockquote>
 </blockquote>
-<p>####### LinkedHastset</p>
-<h6 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h6><pre><code>import java.util.HashSet;
+<blockquote>
+<blockquote>
+<pre><code>HashSet&lt;String&gt; hash=new HashSet&lt;String&gt;();
+hash.add(&quot;hello&quot;);
+hash.add(&quot;world&quot;);
+hash.add(&quot;java&quot;);
+hash.add(&quot;java&quot;);
+System.out.println(hash); //[world, java, hello]
+</code></pre><blockquote>
+</blockquote>
+<pre><code>import java.util.HashSet;
 class test{  
 private String id;
 private String name;
@@ -611,6 +623,48 @@ public static void main(String[] args) {
     System.out.println(hashset);
 }
 }
+</code></pre></blockquote>
+</blockquote>
+<h6 id="LinkedHashset"><a href="#LinkedHashset" class="headerlink" title="LinkedHashset"></a>LinkedHashset</h6><blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>与hashset唯一区别：有序</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>LinkedHashSet&lt;String&gt; lhs=new LinkedHashSet&lt;String&gt;();
+lhs.add(&quot;hello&quot;);
+lhs.add(&quot;world&quot;);
+lhs.add(&quot;hello&quot;);
+System.out.println(lhs); //[hello, world]
+</code></pre><h6 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h6><blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>数据存储结构：采用平衡二叉树来存储元素</li>
+<li>存储的元素不可重复</li>
+<li>可以对元素进行排序</li>
+<li>排序方式：</li>
+<li><ul>
+<li>1.自然排序：重写compareTo()方法 </li>
+</ul>
+</li>
+<li><ul>
+<li>2.定制排序</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>TreeSet&lt;Integer&gt; ts=new TreeSet&lt;Integer&gt;();
+ts.add(12);
+ts.add(8);
+ts.add(13);
+ts.add(14);
+System.out.println(ts); //[8, 12, 13, 14]
 </code></pre>
       
     </div>
@@ -645,8 +699,8 @@ public static void main(String[] args) {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/05/java自学第二天/" rel="prev" title="java自学第二天-集合2">
-                java自学第二天-集合2 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/05/java自学第二天/" rel="prev" title="java自学第二天">
+                java自学第二天 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -761,7 +815,7 @@ public static void main(String[] args) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合-first"><span class="nav-number">1.</span> <span class="nav-text">集合-first</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection-集合概述："><span class="nav-number">1.1.</span> <span class="nav-text">Collection 集合概述：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-子接口"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.子接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#List"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">List:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Iterator遍历集合"><span class="nav-number">1.1.1.1.3.</span> <span class="nav-text">Iterator遍历集合:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Iterator遍历结合（JDK8利用lambda表达式）"><span class="nav-number">1.1.1.1.4.</span> <span class="nav-text">Iterator遍历结合（JDK8利用lambda表达式）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#增强for循环遍历数组"><span class="nav-number">1.1.1.1.5.</span> <span class="nav-text">增强for循环遍历数组:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#增强for循环遍历集合"><span class="nav-number">1.1.1.1.6.</span> <span class="nav-text">增强for循环遍历集合:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#foreach遍历结合（JDK8利用lambda表达式）"><span class="nav-number">1.1.1.1.7.</span> <span class="nav-text">foreach遍历结合（JDK8利用lambda表达式）</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Set"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Set:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HashSet"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#TreeSet"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">TreeSet</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合-first"><span class="nav-number">1.</span> <span class="nav-text">集合-first</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection-集合概述："><span class="nav-number">1.1.</span> <span class="nav-text">Collection 集合概述：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-子接口"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.子接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#List"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">List:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Iterator遍历集合"><span class="nav-number">1.1.1.1.3.</span> <span class="nav-text">Iterator遍历集合:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Iterator遍历结合（JDK8利用lambda表达式）"><span class="nav-number">1.1.1.1.4.</span> <span class="nav-text">Iterator遍历结合（JDK8利用lambda表达式）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#增强for循环遍历数组"><span class="nav-number">1.1.1.1.5.</span> <span class="nav-text">增强for循环遍历数组:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#增强for循环遍历集合"><span class="nav-number">1.1.1.1.6.</span> <span class="nav-text">增强for循环遍历集合:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#foreach遍历结合（JDK8利用lambda表达式）"><span class="nav-number">1.1.1.1.7.</span> <span class="nav-text">foreach遍历结合（JDK8利用lambda表达式）</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Set"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Set:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HashSet"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#LinkedHashset"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">LinkedHashset</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#TreeSet"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">TreeSet</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
