@@ -79,14 +79,19 @@
 
 
 
+<meta name="description" content="#服务器三层框架  表现层：springMVC 业务层：spring 持久层：mybatis  ##SpringMVC  M：model JAVABEAN V：view视图 JSP C：controller控制器  Servlet  通过注解，让一个java简单的运用。 ###SpingMVC的优势 角色划分分工明确由于命令对象就是一个POJO和spring其他框架无缝连接 ###Spring与s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java-spring-once">
 <meta property="og:url" content="http://yoursite.com/2020/06/02/java-spring-once/index.html">
 <meta property="og:site_name" content="shlter">
+<meta property="og:description" content="#服务器三层框架  表现层：springMVC 业务层：spring 持久层：mybatis  ##SpringMVC  M：model JAVABEAN V：view视图 JSP C：controller控制器  Servlet  通过注解，让一个java简单的运用。 ###SpingMVC的优势 角色划分分工明确由于命令对象就是一个POJO和spring其他框架无缝连接 ###Spring与s">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-01T16:16:56.683Z">
+<meta property="og:image" content="http://yoursite.com/2020/06/02/java-spring-once/images/springmvc.jpg">
+<meta property="og:updated_time" content="2020-06-07T05:38:24.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java-spring-once">
+<meta name="twitter:description" content="#服务器三层框架  表现层：springMVC 业务层：spring 持久层：mybatis  ##SpringMVC  M：model JAVABEAN V：view视图 JSP C：controller控制器  Servlet  通过注解，让一个java简单的运用。 ###SpingMVC的优势 角色划分分工明确由于命令对象就是一个POJO和spring其他框架无缝连接 ###Spring与s">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/02/java-spring-once/images/springmvc.jpg">
 
 
 
@@ -296,7 +301,44 @@
       
 
       
-        
+        <p>#服务器三层框架</p>
+<ul>
+<li>表现层：springMVC</li>
+<li>业务层：spring</li>
+<li>持久层：mybatis</li>
+</ul>
+<p>##SpringMVC</p>
+<ul>
+<li>M：model JAVABEAN</li>
+<li>V：view视图 JSP</li>
+<li>C：controller控制器  Servlet</li>
+</ul>
+<p>通过注解，让一个java简单的运用。</p>
+<p>###SpingMVC的优势</p>
+<p>角色划分<br>分工明确<br>由于命令对象就是一个POJO<br>和spring其他框架无缝连接</p>
+<p>###Spring与struts2的区别<br>都是表现层<br>他们的底层都离不开原始的servletAPI<br>他们处理请求的机制都是一个核心控制器</p>
+<p>区别:</p>
+<ul>
+<li>SpringMVC是servlet，而struts2是Filter</li>
+<li>springMVC是基于方法(单例)，struts2是基于类（多例）</li>
+<li>处理ajax的请求方便</li>
+<li>Struts2的OGNL的表达式比springmvc高级</li>
+<li>Springmvc是JSTL</li>
+</ul>
+<p>###springMVC入门</p>
+<p>1.创建服务器，加载一些配置</p>
+<ul>
+<li>DispatcherServlet对象创建</li>
+<li>springmvc.xml被加载</li>
+<li>HelloController创建对象</li>
+</ul>
+<p>2.发送请求，后台处理请求</p>
+<ul>
+<li>项目名称/hello————&gt; DispatcherServlet(控制作用，指挥中心)——————&gt;HelloController</li>
+<li>InternalResourceViewResolver：视图解析器————&gt;success.jsp</li>
+</ul>
+<p>###springMVC框架基于组件方式执行流程<br><img src="images/springmvc.jpg" alt></p>
+
       
     </div>
     
